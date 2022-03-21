@@ -18,9 +18,11 @@ namespace Reserveroom
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            Hotel hotel = new Hotel("Malibu Club");
+
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(hotel)
             };
             MainWindow.Show();
 

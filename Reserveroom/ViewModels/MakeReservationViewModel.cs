@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Reserveroom.Commands;
+using Reserveroom.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,9 +80,12 @@ namespace Reserveroom.ViewModels
                 OnPropertyChanged(nameof(EndDate));
             }
         }
-
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
+        public MakeReservationViewModel(Hotel hotel)
+        {
+            SubmitCommand = new MakeReservationCommand(this, hotel);
+        }
     }
 }

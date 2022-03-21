@@ -22,6 +22,11 @@ namespace Reserveroom.Models
             //_reservations.Where(r => r.Username == "qwe");
         }
 
+        /// <summary>
+        /// Adds reservation to reservationbook
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <exception cref="ReservationConflictException">qwe</exception>
         public void AddReservation(Reservation reservation)
         {
             foreach (Reservation existingReservarion in _reservations)

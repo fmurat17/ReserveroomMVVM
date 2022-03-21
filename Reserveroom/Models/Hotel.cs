@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reserveroom.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace Reserveroom.Models
             return _reservationBook.GetAllReservations();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <exception cref="ReservationConflictException"></exception>
         public void MakeReservation(Reservation reservation)
         {
             _reservationBook.AddReservation(reservation);
